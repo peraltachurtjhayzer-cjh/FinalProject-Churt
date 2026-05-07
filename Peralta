@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churt Jhayzer I. Peralta - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        section {
+            padding: 4rem 0;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        #home {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding-top: 8rem;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #home p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #2c3e50;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        #about {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #3498db;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .skill {
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #3498db;
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tech {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        #contact {
+            background: #34495e;
+            color: white;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-links a:hover {
+            background: #3498db;
+            transform: translateY(-5px) scale(1.1);
+            border-color: white;
+        }
+
+        /* Spotify specific hover */
+        .social-links a[href*="spotify"] {
+            background: rgba(30,215,96,0.3);
+        }
+        .social-links a[href*="spotify"]:hover {
+            background: #1DB954;
+        }
+
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            section {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Churt Jhayzer</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home -->
+    <section id="home">
+        <div>
+            <h1>Churt Jhayzer I. Peralta</h1>
+            <p class="hero-role">BS Computer Science Student</p>
+            <p>Learning web development and creating projects to build my skills</p>
+            <a href="#projects" class="btn">See My Projects</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src=https://scontent.fmnl4-3.fna.fbcdn.net/v/t39.30808-1/690642386_1997883834448007_5191340336344322015_n.jpg?stp=dst-jpg_s160x160_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeEBJU_lrW57rr1BisSUxe8c3XWeA1N5OVLddZ4DU3k5UkPFO8IeV9f6hAZ0J3bn9_mkqtJPgzJqAL7Wbz6Zyti7&_nc_ohc=vjwWOR_HFeUQ7kNvwEUnJ3R&_nc_oc=AdqNuS5wHs19NhwVmMGqLR2xCdjQF7FffEgTIjSSvb_VmrdRvrzF6Dy6XcL-cx5a7kic7beHRsPU5-K6kDtexRQi&_nc_zt=24&_nc_ht=scontent.fmnl4-3.fna&_nc_gid=fo6eMH0xPdX4n9aXkKD73A&_nc_ss=7b2a8&oh=00_Af76hh5qnBl_tP_gNZvCzwUMmiyEZA_JQsFodiqhEBAUHg&oe=6A026BDE
+            <p>I am currently a college student taking up Information Technology. I completed my elementary education at Luis Francisco Elementary School, my junior high school at Veinte Reales National High School, and my senior high school at Immaculate Conception Polytechnic.
+
+I am a student with a strong interest in sports, especially basketball, as well as riding motorcycles. These hobbies help me stay active, disciplined, and focused. I enjoy challenging myself both physically and mentally, which also reflects in how i approach my studies and personal growth.
+
+My goals in life are to successfully finish my education, find a stable job abroad, and eventually start my own business. I am determined to achieve these goals not only for myself but also to give back to my family and improve our lives. I believe that through hard work, perseverance, and dedication,i can turn my dreams into reality.
+
+</p>
+            <div>
+                <h3>College Student & Web Developer</h3>
+                <p>Currently studying BS Computer Science. Learning HTML, CSS, JavaScript and building projects to improve my skills. Passionate about creating websites and solving problems with code.</p>
+                <p>Goal: Become a full-stack developer</p>
+                <div class="skills">
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">Git</span>
+                    <span class="skill">Responsive Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Personal Portfolio</h3>
+                <p>A responsive portfolio website to showcase my skills and projects.</p>
+                <div class="project-tech">HTML • CSS • JavaScript</div>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <a href="#" style="color: #3498db;">Live Demo</a>
+                    <a href="#" style="color: #3498db;">Code</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Calculator App</h3>
+                <p>A simple calculator with basic operations built with HTML, CSS and JavaScript.</p>
+                <div class="project-tech">HTML • CSS • JavaScript</div>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <a href="#" style="color: #3498db;">Live Demo</a>
+                    <a href="#" style="color: #3498db;">Code</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>To-Do List</h3>
+                <p>A task management app where you can add, delete and mark tasks as complete.</p>
+                <div class="project-tech">HTML • CSS • JavaScript • LocalStorage</div>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <a href="#" style="color: #3498db;">Live Demo</a>
+                    <a href="#" style="color: #3498db;">Code</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <p>peraltachurtjhayzer@gmail.com</p>
+            <p>09518638128</p>
+        </div>
+        <div class="social-links">
+            <!-- FACEBOOK -->
+            <a href="https://www.facebook.com/share/1DxHuFMYwK/" target="_blank" rel="noopener" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            
+            <!-- SPOTIFY -->
+            <a href="https://open.spotify.com/user/31yf53lflo2vqejdz7nm5tqakyjm" target="_blank" rel="noopener" title="Spotify">
+                <i class="fab fa-spotify"></i>
+            </a>
+            
+            <!-- GITHUB -->
+            <a href="https://github.com/peraltachurtjhayzer-cjh" target="_blank" rel="noopener" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            
+            <!-- TIKTOK -->
+            <a href="https://www.tiktok.com/@churtjhayzer?_r=1&_t=ZS-95whtmec0Qr" target="_blank" rel="noopener" title="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Social link click confirmation
+        document.querySelectorAll('.social-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                console.log('Link clicked:', this.href);
+            });
+        });
+    </script>
+</body>
+</html>
